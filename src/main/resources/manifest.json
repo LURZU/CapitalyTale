@@ -1,11 +1,11 @@
 {
   "Group": "dev.hytalemodding",
-  "Name": "ExamplePlugin",
+  "Name": "CapitalyTale",
   "Version": "1.0.0",
-  "Description": "Description of your plugin",
+  "Description": "Banking system with ATM for Hytale",
   "Authors": [
     {
-      "Name": "Your Name",
+      "Name": "LURZU",
       "Email": "your.email@example.com",
       "Url": "https://your-website.com"
     }
@@ -16,5 +16,23 @@
   "OptionalDependencies": {},
   "DisabledByDefault": false,
   "IncludesAssetPack": false,
-  "Main": "dev.hytalemodding.ExamplePlugin"
+  "Main": "dev.hytalemodding.capitalytale.CapitalyTalePlugin",
+  "Permissions": {
+    "capitalytale.balance": {
+      "Description": "Check your bank balance",
+      "Default": true
+    },
+    "capitalytale.pay": {
+      "Description": "Send money to other players",
+      "Default": true
+    },
+    "capitalytale.deposit": {
+      "Description": "Deposit money (Admin/Test)",
+      "Default": true
+    },
+    "capitalytale.withdraw": {
+      "Description": "Withdraw money (Test)",
+      "Default": true
+    }
+  }
 }

@@ -16,7 +16,7 @@ public class ExamplePlugin extends JavaPlugin {
 
     @Override
     protected void setup() {
-        this.getCommandRegistry().registerCommand(new ExampleCommand("example", "An example command"));
+        this.getCommandRegistry().registerCommand(new ExampleCommand("mvn package", "An example command"));
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, ExampleEvent::onPlayerReady);
     }
 }

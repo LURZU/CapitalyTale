@@ -1,0 +1,20 @@
+{
+  "Group": "LURZU",
+  "Name": "CapitalyTale",
+  "Version": "0.0.1",
+  "Description": "This a mod to add Capitalism to Hytale (Value on all object, ATM, Player have an bank account)",
+  "Authors": [
+    {
+      "Name": "LURZU",
+      "Email": "",
+      "Url": ""
+    }
+  ],
+  "Website": "",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": []
+}
