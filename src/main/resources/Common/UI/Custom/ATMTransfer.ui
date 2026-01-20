@@ -1,0 +1,207 @@
+$C = "CapitalyTale_Common.ui";
+
+Group #TransferRoot {
+  Anchor: (Left: 0, Top: 0, Right: 0, Bottom: 0);
+  LayoutMode: Center;
+
+  Group #TransferCard {
+    Anchor: (Width: 380, Height: 520);
+    Background: (Color: #0a1628ee);
+    LayoutMode: Top;
+    Padding: (Top: 0, Bottom: 16, Left: 16, Right: 16);
+    OutlineColor: #1e3a5f;
+    OutlineSize: 1;
+    
+    Group #Header {
+      LayoutMode: Left;
+      Background: (Color: #0d2040);
+      Padding: (Top: 14, Bottom: 14, Left: 16, Right: 16);
+      Anchor: (Left: -16, Right: -16, Height: 52, Bottom: 16);
+      
+      TextButton #BackButton {
+        Text: "←";
+        Style: $C.@CtButtonGhostStyle;
+        Anchor: (Width: 32, Height: 32, Vertical: 0);
+      }
+      
+      Label #Title {
+        Text: "Transfer Funds";
+        Style: (FontSize: 16, TextColor: #00D4FF, RenderBold: true, HorizontalAlignment: Center);
+        FlexWeight: 1;
+        Anchor: (Vertical: 0);
+      }
+      
+      Group #HeaderSpacer { Anchor: (Width: 32, Height: 32); }
+    }
+    
+    Group #BalanceSection {
+      LayoutMode: Left;
+      Background: (Color: #122035);
+      Padding: (Top: 10, Bottom: 10, Left: 16, Right: 16);
+      Anchor: (Height: 50, Bottom: 16);
+      OutlineColor: #1e3a5f;
+      OutlineSize: 1;
+      
+      Label #BalanceLabel {
+        Text: "Your Balance";
+        Style: (FontSize: 11, TextColor: #8899aa);
+        FlexWeight: 1;
+        Anchor: (Vertical: 0);
+      }
+      
+      Label #CurrentBalance {
+        Text: "$0.00";
+        Style: (FontSize: 16, TextColor: #00FF88, RenderBold: true);
+        Anchor: (Vertical: 0);
+      }
+    }
+    
+    Group #RecipientSection {
+      LayoutMode: Top;
+      Anchor: (Bottom: 12);
+      
+      Label #RecipientLabel {
+        Text: "Send To";
+        Style: (FontSize: 12, TextColor: #8899aa, RenderBold: true);
+        Anchor: (Bottom: 8);
+      }
+      
+      Group #SearchInputBox {
+        LayoutMode: Left;
+        Background: (Color: #0d1a2d);
+        Padding: (Left: 12, Right: 12, Top: 8, Bottom: 8);
+        Anchor: (Height: 40, Bottom: 8);
+        OutlineColor: #1e3a5f;
+        OutlineSize: 1;
+        
+        Label #SearchIcon {
+          Text: "?";
+          Style: (FontSize: 16, TextColor: #556677);
+          Anchor: (Vertical: 0, Right: 8);
+        }
+        
+        TextField #RecipientSearch {
+          Style: (FontSize: 14, TextColor: #ffffff);
+          FlexWeight: 1;
+        }
+      }
+      
+      Group #PlayerListContainer {
+        LayoutMode: TopScrolling;
+        Background: (Color: #0d1a2d);
+        Anchor: (Height: 100);
+        Padding: (Top: 4, Bottom: 4, Left: 4, Right: 4);
+        OutlineColor: #1e3a5f;
+        OutlineSize: 1;
+        
+        Group #PlayerList {
+          LayoutMode: Top;
+          Label #NoPlayersLabel {
+            Text: "Search for a player...";
+            Style: (FontSize: 12, TextColor: #556677, HorizontalAlignment: Center);
+            Padding: (Top: 20);
+          }
+        }
+      }
+      
+      Group #SelectedPlayerBox {
+        LayoutMode: Left;
+        Background: (Color: #1a3050);
+        Padding: (Left: 12, Right: 12, Top: 8, Bottom: 8);
+        Anchor: (Height: 40, Top: 8);
+        OutlineColor: #00D4FF;
+        OutlineSize: 1;
+        Visible: false;
+        
+        Label #SelectedIcon {
+          Text: "✓";
+          Style: (FontSize: 14, TextColor: #00FF88, RenderBold: true);
+          Anchor: (Vertical: 0, Right: 8);
+        }
+        
+        Label #SelectedPlayerName {
+          Text: "PlayerName";
+          Style: (FontSize: 14, TextColor: #ffffff, RenderBold: true);
+          FlexWeight: 1;
+          Anchor: (Vertical: 0);
+        }
+        
+        TextButton #ClearSelection {
+          Text: "X";
+          Style: $C.@CtButtonGhostStyle;
+          Anchor: (Width: 24, Height: 24, Vertical: 0);
+        }
+      }
+    }
+    
+    Group #AmountSection {
+      LayoutMode: Top;
+      Anchor: (Bottom: 8);
+      
+      Label #AmountLabel {
+        Text: "Amount to Send";
+        Style: (FontSize: 12, TextColor: #8899aa, RenderBold: true);
+        Anchor: (Bottom: 8);
+      }
+      
+      Group #AmountInputBox {
+        LayoutMode: Left;
+        Background: (Color: #0d1a2d);
+        Padding: (Left: 16, Right: 16, Top: 10, Bottom: 10);
+        Anchor: (Height: 46, Bottom: 10);
+        OutlineColor: #1e3a5f;
+        OutlineSize: 1;
+        
+        Label #CurrencyPrefix {
+          Text: "$";
+          Style: (FontSize: 18, TextColor: #556677, RenderBold: true);
+          Anchor: (Vertical: 0, Right: 8);
+        }
+        
+        TextField #AmountInput {
+          Style: (FontSize: 18, TextColor: #ffffff, RenderBold: true);
+          FlexWeight: 1;
+        }
+      }
+      
+      Group #FeeRow {
+        LayoutMode: Left;
+        Anchor: (Height: 18, Bottom: 4);
+        Label #FeeLabel { Text: "Transfer Fee (5%)"; Style: (FontSize: 10, TextColor: #556677); FlexWeight: 1; Anchor: (Vertical: 0); }
+        Label #FeeValue { Text: "$0.00"; Style: (FontSize: 10, TextColor: #FFB800, RenderBold: true); Anchor: (Vertical: 0); }
+      }
+      
+      Group #TotalRow {
+        LayoutMode: Left;
+        Anchor: (Height: 18, Bottom: 4);
+        Label #TotalLabel { Text: "Total Deducted"; Style: (FontSize: 10, TextColor: #556677); FlexWeight: 1; Anchor: (Vertical: 0); }
+        Label #TotalValue { Text: "$0.00"; Style: (FontSize: 10, TextColor: #FF4466, RenderBold: true); Anchor: (Vertical: 0); }
+      }
+      
+      Group #AfterRow {
+        LayoutMode: Left;
+        Anchor: (Height: 18);
+        Label #AfterLabel { Text: "Your Balance After"; Style: (FontSize: 10, TextColor: #556677); FlexWeight: 1; Anchor: (Vertical: 0); }
+        Label #BalanceAfter { Text: "$0.00"; Style: (FontSize: 10, TextColor: #00D4FF, RenderBold: true); Anchor: (Vertical: 0); }
+      }
+    }
+    
+    Group #Spacer { FlexWeight: 1; }
+    
+    Group #ActionSection {
+      LayoutMode: Top;
+      
+      TextButton #ConfirmButton {
+        Text: "SEND TRANSFER";
+        Style: $C.@CtButtonAccentStyle;
+        Anchor: (Height: 44, Bottom: 10);
+      }
+      
+      TextButton #CancelButton {
+        Text: "Cancel";
+        Style: $C.@CtButtonGhostStyle;
+        Anchor: (Height: 32);
+      }
+    }
+  }
+}

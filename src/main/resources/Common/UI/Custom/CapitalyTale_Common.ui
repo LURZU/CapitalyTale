@@ -1,0 +1,144 @@
+// CapitalyTale Common Styles
+// Import: $C = "CapitalyTale_Common.ui";
+
+// === Color Palette (Cyan/Blue Theme - Different from Ecotale's Gold) ===
+@CtPrimary = #00D4FF;
+@CtSecondary = #0099CC;
+@CtAccent = #00FF88;
+@CtWarning = #FFB800;
+@CtDanger = #FF4466;
+@CtBgDark = #0a1628ee;
+@CtBgCard = #122035dd;
+@CtBgInput = #0d1a2d;
+@CtBorder = #1e3a5f;
+@CtTextWhite = #ffffff;
+@CtTextGray = #8899aa;
+@CtTextMuted = #556677;
+
+// === Label Styles ===
+@CtTitleStyle = LabelStyle(
+  FontSize: 20,
+  TextColor: @CtPrimary,
+  RenderBold: true,
+  HorizontalAlignment: Center
+);
+
+@CtSubtitleStyle = LabelStyle(
+  FontSize: 14,
+  TextColor: @CtTextGray,
+  RenderBold: false,
+  HorizontalAlignment: Center
+);
+
+@CtBalanceStyle = LabelStyle(
+  FontSize: 28,
+  TextColor: @CtAccent,
+  RenderBold: true,
+  HorizontalAlignment: Center
+);
+
+@CtBalanceSmallStyle = LabelStyle(
+  FontSize: 18,
+  TextColor: @CtAccent,
+  RenderBold: true
+);
+
+@CtLabelStyle = LabelStyle(
+  FontSize: 13,
+  TextColor: @CtTextWhite,
+  RenderBold: false
+);
+
+@CtLabelBoldStyle = LabelStyle(
+  FontSize: 13,
+  TextColor: @CtTextWhite,
+  RenderBold: true
+);
+
+@CtLabelGrayStyle = LabelStyle(
+  FontSize: 11,
+  TextColor: @CtTextGray,
+  RenderBold: false
+);
+
+@CtLabelMutedStyle = LabelStyle(
+  FontSize: 10,
+  TextColor: @CtTextMuted,
+  RenderBold: false
+);
+
+// === Button Label Styles ===
+@CtButtonLabelStyle = LabelStyle(
+  FontSize: 13,
+  TextColor: @CtTextWhite,
+  RenderBold: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+@CtButtonLabelDarkStyle = LabelStyle(
+  FontSize: 13,
+  TextColor: #0a1628,
+  RenderBold: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+// === Button Styles ===
+@CtButtonPrimaryStyle = TextButtonStyle(
+  Default: (Background: (Color: #0077aa), LabelStyle: @CtButtonLabelStyle),
+  Hovered: (Background: (Color: #0099cc), LabelStyle: @CtButtonLabelStyle),
+  Pressed: (Background: (Color: #006699), LabelStyle: @CtButtonLabelStyle),
+  Disabled: (Background: (Color: #333344), LabelStyle: @CtButtonLabelStyle)
+);
+
+@CtButtonSecondaryStyle = TextButtonStyle(
+  Default: (Background: (Color: #1e3a5f), LabelStyle: @CtButtonLabelStyle),
+  Hovered: (Background: (Color: #2a4a70), LabelStyle: @CtButtonLabelStyle),
+  Pressed: (Background: (Color: #162d4a), LabelStyle: @CtButtonLabelStyle),
+  Disabled: (Background: (Color: #333344), LabelStyle: @CtButtonLabelStyle)
+);
+
+@CtButtonSuccessStyle = TextButtonStyle(
+  Default: (Background: (Color: #00aa66), LabelStyle: @CtButtonLabelStyle),
+  Hovered: (Background: (Color: #00cc77), LabelStyle: @CtButtonLabelStyle),
+  Pressed: (Background: (Color: #009955), LabelStyle: @CtButtonLabelStyle),
+  Disabled: (Background: (Color: #333344), LabelStyle: @CtButtonLabelStyle)
+);
+
+@CtButtonDangerStyle = TextButtonStyle(
+  Default: (Background: (Color: #aa3344), LabelStyle: @CtButtonLabelStyle),
+  Hovered: (Background: (Color: #cc4455), LabelStyle: @CtButtonLabelStyle),
+  Pressed: (Background: (Color: #992233), LabelStyle: @CtButtonLabelStyle),
+  Disabled: (Background: (Color: #333344), LabelStyle: @CtButtonLabelStyle)
+);
+
+@CtButtonAccentStyle = TextButtonStyle(
+  Default: (Background: (Color: #00D4FF), LabelStyle: @CtButtonLabelDarkStyle),
+  Hovered: (Background: (Color: #33DDFF), LabelStyle: @CtButtonLabelDarkStyle),
+  Pressed: (Background: (Color: #00AACC), LabelStyle: @CtButtonLabelDarkStyle),
+  Disabled: (Background: (Color: #333344), LabelStyle: @CtButtonLabelStyle)
+);
+
+@CtButtonGhostStyle = TextButtonStyle(
+  Default: (Background: (Color: #00000000), LabelStyle: @CtButtonLabelStyle),
+  Hovered: (Background: (Color: #1e3a5f44), LabelStyle: @CtButtonLabelStyle),
+  Pressed: (Background: (Color: #1e3a5f88), LabelStyle: @CtButtonLabelStyle),
+  Disabled: (Background: (Color: #00000000), LabelStyle: @CtButtonLabelStyle)
+);
+
+// === Menu Button Style (Large) ===
+@CtMenuButtonLabelStyle = LabelStyle(
+  FontSize: 15,
+  TextColor: @CtTextWhite,
+  RenderBold: true,
+  HorizontalAlignment: Center,
+  VerticalAlignment: Center
+);
+
+@CtMenuButtonStyle = TextButtonStyle(
+  Default: (Background: (Color: #1a2d4a), LabelStyle: @CtMenuButtonLabelStyle),
+  Hovered: (Background: (Color: #243d5a), LabelStyle: @CtMenuButtonLabelStyle),
+  Pressed: (Background: (Color: #142438), LabelStyle: @CtMenuButtonLabelStyle),
+  Disabled: (Background: (Color: #333344), LabelStyle: @CtMenuButtonLabelStyle)
+);

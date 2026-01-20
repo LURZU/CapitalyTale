@@ -1,0 +1,178 @@
+$C = "CapitalyTale_Common.ui";
+
+Group #WithdrawRoot {
+  Anchor: (Left: 0, Top: 0, Right: 0, Bottom: 0);
+  LayoutMode: Center;
+
+  Group #WithdrawCard {
+    Anchor: (Width: 360, Height: 420);
+    Background: (Color: #0a1628ee);
+    LayoutMode: Top;
+    Padding: (Top: 0, Bottom: 16, Left: 16, Right: 16);
+    OutlineColor: #1e3a5f;
+    OutlineSize: 1;
+    
+    // === Header ===
+    Group #Header {
+      LayoutMode: Left;
+      Background: (Color: #0d2040);
+      Padding: (Top: 14, Bottom: 14, Left: 16, Right: 16);
+      Anchor: (Left: -16, Right: -16, Height: 52, Bottom: 16);
+      
+      TextButton #BackButton {
+        Text: "←";
+        Style: $C.@CtButtonGhostStyle;
+        Anchor: (Width: 32, Height: 32, Vertical: 0);
+      }
+      
+      Label #Title {
+        Text: "Withdraw Funds";
+        Style: (FontSize: 16, TextColor: #FFB800, RenderBold: true, HorizontalAlignment: Center);
+        FlexWeight: 1;
+        Anchor: (Vertical: 0);
+      }
+      
+      Group #HeaderSpacer {
+        Anchor: (Width: 32, Height: 32);
+      }
+    }
+    
+    // === Current Balance ===
+    Group #BalanceSection {
+      LayoutMode: Top;
+      Background: (Color: #122035);
+      Padding: (Top: 12, Bottom: 12, Left: 16, Right: 16);
+      Anchor: (Height: 70, Bottom: 16);
+      OutlineColor: #1e3a5f;
+      OutlineSize: 1;
+      
+      Group #BalanceRow {
+        LayoutMode: Left;
+        Anchor: (Height: 20, Bottom: 4);
+        
+        Label #BalanceLabel {
+          Text: "Available Balance";
+          Style: (FontSize: 11, TextColor: #8899aa);
+          FlexWeight: 1;
+          Anchor: (Vertical: 0);
+        }
+        
+        Label #CurrentBalance {
+          Text: "$0.00";
+          Style: (FontSize: 14, TextColor: #00FF88, RenderBold: true);
+          Anchor: (Vertical: 0);
+        }
+      }
+      
+      Group #AfterRow {
+        LayoutMode: Left;
+        Anchor: (Height: 20);
+        
+        Label #AfterLabel {
+          Text: "After Withdrawal";
+          Style: (FontSize: 11, TextColor: #8899aa);
+          FlexWeight: 1;
+          Anchor: (Vertical: 0);
+        }
+        
+        Label #BalanceAfter {
+          Text: "$0.00";
+          Style: (FontSize: 14, TextColor: #FFB800, RenderBold: true);
+          Anchor: (Vertical: 0);
+        }
+      }
+    }
+    
+    // === Amount Input Section ===
+    Group #InputSection {
+      LayoutMode: Top;
+      
+      Label #AmountLabel {
+        Text: "Withdrawal Amount";
+        Style: (FontSize: 12, TextColor: #8899aa, RenderBold: true);
+        Anchor: (Bottom: 8);
+      }
+      
+      Group #AmountInputBox {
+        LayoutMode: Left;
+        Background: (Color: #0d1a2d);
+        Padding: (Left: 16, Right: 16, Top: 12, Bottom: 12);
+        Anchor: (Height: 50, Bottom: 12);
+        OutlineColor: #1e3a5f;
+        OutlineSize: 1;
+        
+        Label #CurrencyPrefix {
+          Text: "$";
+          Style: (FontSize: 20, TextColor: #556677, RenderBold: true);
+          Anchor: (Vertical: 0, Right: 8);
+        }
+        
+        TextField #AmountInput {
+          Style: (FontSize: 20, TextColor: #ffffff, RenderBold: true);
+          FlexWeight: 1;
+        }
+      }
+      
+      Label #QuickAmountLabel {
+        Text: "Quick Select";
+        Style: (FontSize: 11, TextColor: #556677);
+        Anchor: (Bottom: 8);
+      }
+      
+      Group #QuickAmounts {
+        LayoutMode: Left;
+        Anchor: (Height: 36, Bottom: 16);
+        
+        TextButton #Quick100 {
+          Text: "$100";
+          Style: $C.@CtButtonSecondaryStyle;
+          FlexWeight: 1;
+          Anchor: (Right: 6, Height: 32);
+        }
+        
+        TextButton #Quick500 {
+          Text: "$500";
+          Style: $C.@CtButtonSecondaryStyle;
+          FlexWeight: 1;
+          Anchor: (Right: 6, Height: 32);
+        }
+        
+        TextButton #Quick1000 {
+          Text: "$1K";
+          Style: $C.@CtButtonSecondaryStyle;
+          FlexWeight: 1;
+          Anchor: (Right: 6, Height: 32);
+        }
+        
+        TextButton #QuickAll {
+          Text: "ALL";
+          Style: $C.@CtButtonSecondaryStyle;
+          FlexWeight: 1;
+          Anchor: (Height: 32);
+        }
+      }
+    }
+    
+    // === Spacer ===
+    Group #Spacer {
+      FlexWeight: 1;
+    }
+    
+    // === Action Buttons ===
+    Group #ActionSection {
+      LayoutMode: Top;
+      
+      TextButton #ConfirmButton {
+        Text: "CONFIRM WITHDRAWAL";
+        Style: $C.@CtButtonPrimaryStyle;
+        Anchor: (Height: 44, Bottom: 10);
+      }
+      
+      TextButton #CancelButton {
+        Text: "Cancel";
+        Style: $C.@CtButtonGhostStyle;
+        Anchor: (Height: 32);
+      }
+    }
+  }
+}

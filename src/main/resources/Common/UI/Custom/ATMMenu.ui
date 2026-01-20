@@ -1,0 +1,131 @@
+$C = "CapitalyTale_Common.ui";
+
+Group #ATMRoot {
+  Anchor: (Left: 0, Top: 0, Right: 0, Bottom: 0);
+  LayoutMode: Center;
+
+  Group #ATMCard {
+    Anchor: (Width: 420, Height: 400);
+    Background: (Color: #0a1628ee);
+    LayoutMode: Top;
+    Padding: (Top: 0, Bottom: 20, Left: 0, Right: 0);
+    OutlineColor: #1e3a5f;
+    OutlineSize: 1;
+    
+    Group #Header {
+      LayoutMode: Top;
+      Background: (Color: #0d2040);
+      Padding: (Top: 20, Bottom: 20, Left: 24, Right: 24);
+      Anchor: (Height: 90, Bottom: 20);
+      
+      Group #HeaderTop {
+        LayoutMode: Left;
+        Anchor: (Height: 28, Bottom: 10);
+        
+        Label #BankLogo {
+          Text: "◈";
+          Style: (FontSize: 22, TextColor: #00D4FF, RenderBold: true);
+          Anchor: (Width: 32, Vertical: 0);
+        }
+        
+        Label #Title {
+          Text: "CAPITALYTALE";
+          Style: (FontSize: 20, TextColor: #00D4FF, RenderBold: true);
+          FlexWeight: 1;
+          Anchor: (Vertical: 0);
+        }
+        
+        TextButton #CloseButton {
+          Text: "X";
+          Style: $C.@CtButtonGhostStyle;
+          Anchor: (Width: 32, Height: 32);
+        }
+      }
+      
+      Label #Subtitle {
+        Text: "Digital Banking Terminal";
+        Style: (FontSize: 12, TextColor: #556677);
+      }
+    }
+    
+    Group #BalanceSection {
+      LayoutMode: Top;
+      Background: (Color: #122035);
+      Padding: (Top: 20, Bottom: 20, Left: 20, Right: 20);
+      Anchor: (Left: 20, Right: 20, Height: 100, Bottom: 20);
+      OutlineColor: #1e3a5f;
+      OutlineSize: 1;
+      
+      Label #BalanceLabel {
+        Text: "Available Balance";
+        Style: (FontSize: 12, TextColor: #8899aa);
+        Anchor: (Bottom: 8);
+      }
+      
+      Group #BalanceRow {
+        LayoutMode: Left;
+        Anchor: (Height: 40, Bottom: 6);
+        
+        Label #CurrencySymbol {
+          Text: "$";
+          Style: (FontSize: 24, TextColor: #00FF88, RenderBold: true);
+          Anchor: (Vertical: 0, Right: 6);
+        }
+        
+        Label #BalanceValue {
+          Text: "0.00";
+          Style: (FontSize: 32, TextColor: #00FF88, RenderBold: true);
+          Anchor: (Vertical: 0);
+        }
+      }
+      
+      Label #AccountInfo {
+        Text: "Account #--------";
+        Style: (FontSize: 11, TextColor: #556677);
+      }
+    }
+    
+    Group #ActionsSection {
+      LayoutMode: Top;
+      Padding: (Top: 0, Left: 20, Right: 20);
+      FlexWeight: 1;
+      
+      Label #ActionsTitle {
+        Text: "Quick Actions";
+        Style: (FontSize: 13, TextColor: #8899aa, RenderBold: true);
+        Anchor: (Bottom: 14);
+      }
+      
+      Group #ActionRow1 {
+        LayoutMode: Left;
+        Anchor: (Height: 80, Bottom: 12);
+        
+        TextButton #TransferBtn {
+          Text: "⇄ Transfer";
+          Style: $C.@CtMenuButtonStyle;
+          FlexWeight: 1;
+          Anchor: (Right: 10, Height: 80);
+        }
+        
+        TextButton #HistoryBtn {
+          Text: "☰ History";
+          Style: $C.@CtMenuButtonStyle;
+          FlexWeight: 1;
+          Anchor: (Height: 80);
+        }
+      }
+    }
+    
+    Group #Footer {
+      LayoutMode: Top;
+      Padding: (Left: 20, Right: 20, Bottom: 0, Top: 40);
+      Anchor: (Height: 56);
+      
+      TextButton #ExitButton {
+        Text: "EXIT ATM";
+        Style: $C.@CtButtonSecondaryStyle;
+        Anchor: (Height: 44);
+      }
+    }
+  }
+}

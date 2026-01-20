@@ -1,0 +1,190 @@
+$C = "CapitalyTale_Common.ui";
+
+Group #ConfigRoot {
+  Anchor: (Left: 0, Top: 0, Right: 0, Bottom: 0);
+  LayoutMode: Center;
+
+  Group #ConfigCard {
+    Anchor: (Width: 600, Height: 550);
+    Background: (Color: #0a1628ee);
+    LayoutMode: Top;
+    OutlineColor: #1e3a5f;
+    OutlineSize: 1;
+    
+    Group #Header {
+      LayoutMode: Left;
+      Background: (Color: #0d2040);
+      Padding: (Top: 14, Bottom: 14, Left: 20, Right: 20);
+      Anchor: (Height: 52);
+      
+      TextButton #BackButton {
+        Text: "←";
+        Style: $C.@CtButtonGhostStyle;
+        Anchor: (Width: 36, Height: 36, Vertical: 0);
+      }
+      
+      Label #Title {
+        Text: "Configuration";
+        Style: (FontSize: 20, TextColor: #00D4FF, RenderBold: true, HorizontalAlignment: Center);
+        FlexWeight: 1;
+        Anchor: (Vertical: 0);
+      }
+      
+      TextButton #CloseButton {
+        Text: "X";
+        Style: $C.@CtButtonGhostStyle;
+        Anchor: (Width: 36, Height: 36);
+      }
+    }
+    
+    Group #ConfigFormContainer {
+      LayoutMode: TopScrolling;
+      Padding: (Top: 24, Left: 24, Right: 24, Bottom: 24);
+      FlexWeight: 1;
+      
+      Group #ConfigForm {
+        LayoutMode: Top;
+        
+        Label #LblCurrency {
+          Text: "Currency Settings";
+          Style: (FontSize: 15, TextColor: #00D4FF, RenderBold: true);
+          Anchor: (Bottom: 16);
+        }
+        
+        Group #CurrencyRow {
+          LayoutMode: Left;
+          Anchor: (Height: 44, Bottom: 18);
+          
+          Label { Text: "Symbol:"; Style: (FontSize: 14, TextColor: #8899aa); Anchor: (Width: 120, Vertical: 0); }
+          
+          Group #CurrencySymbolBox {
+            Background: (Color: #0d1a2d);
+            Padding: (Left: 14, Right: 14, Top: 10, Bottom: 10);
+            Anchor: (Width: 90, Height: 40, Vertical: 0, Right: 36);
+            OutlineColor: #1e3a5f;
+            OutlineSize: 1;
+            TextField #CurrencySymbolInput { Style: (FontSize: 15, TextColor: #ffffff); FlexWeight: 1; }
+          }
+          
+          Label { Text: "Name:"; Style: (FontSize: 14, TextColor: #8899aa); Anchor: (Width: 80, Vertical: 0); }
+          
+          Group #CurrencyNameBox {
+            Background: (Color: #0d1a2d);
+            Padding: (Left: 14, Right: 14, Top: 10, Bottom: 10);
+            Anchor: (Width: 160, Height: 40, Vertical: 0);
+            OutlineColor: #1e3a5f;
+            OutlineSize: 1;
+            TextField #CurrencyNameInput { Style: (FontSize: 15, TextColor: #ffffff); FlexWeight: 1; }
+          }
+        }
+        
+        Label #LblTransfer {
+          Text: "Transfer Settings";
+          Style: (FontSize: 15, TextColor: #00D4FF, RenderBold: true);
+          Anchor: (Bottom: 16, Top: 12);
+        }
+        
+        Group #TransferFeeRow {
+          LayoutMode: Left;
+          Anchor: (Height: 44, Bottom: 18);
+          
+          Label { Text: "Transfer Fee:"; Style: (FontSize: 14, TextColor: #8899aa); Anchor: (Width: 120, Vertical: 0); }
+          
+          Group #TransferFeeBox {
+            Background: (Color: #0d1a2d);
+            Padding: (Left: 14, Right: 14, Top: 10, Bottom: 10);
+            Anchor: (Width: 110, Height: 40, Vertical: 0, Right: 12);
+            OutlineColor: #1e3a5f;
+            OutlineSize: 1;
+            TextField #TransferFeeInput { Style: (FontSize: 15, TextColor: #ffffff); FlexWeight: 1; }
+          }
+          
+          Label #FeePercentLabel { Text: "%"; Style: (FontSize: 14, TextColor: #556677); Anchor: (Width: 30, Vertical: 0); }
+        }
+        
+        Group #MaxTransferRow {
+          LayoutMode: Left;
+          Anchor: (Height: 44, Bottom: 18);
+          
+          Label { Text: "Max Transfer:"; Style: (FontSize: 14, TextColor: #8899aa); Anchor: (Width: 120, Vertical: 0); }
+          
+          Group #MaxTransferBox {
+            Background: (Color: #0d1a2d);
+            Padding: (Left: 14, Right: 14, Top: 10, Bottom: 10);
+            Anchor: (Width: 160, Height: 40, Vertical: 0);
+            OutlineColor: #1e3a5f;
+            OutlineSize: 1;
+            TextField #MaxTransferInput { Style: (FontSize: 15, TextColor: #ffffff); FlexWeight: 1; }
+          }
+        }
+        
+        Label #LblBalance {
+          Text: "Balance Settings";
+          Style: (FontSize: 15, TextColor: #00D4FF, RenderBold: true);
+          Anchor: (Bottom: 16, Top: 12);
+        }
+        
+        Group #StartingBalanceRow {
+          LayoutMode: Left;
+          Anchor: (Height: 44, Bottom: 18);
+          
+          Label { Text: "Starting Balance:"; Style: (FontSize: 14, TextColor: #8899aa); Anchor: (Width: 140, Vertical: 0); }
+          
+          Group #StartingBalanceBox {
+            Background: (Color: #0d1a2d);
+            Padding: (Left: 14, Right: 14, Top: 10, Bottom: 10);
+            Anchor: (Width: 160, Height: 40, Vertical: 0);
+            OutlineColor: #1e3a5f;
+            OutlineSize: 1;
+            TextField #StartingBalanceInput { Style: (FontSize: 15, TextColor: #ffffff); FlexWeight: 1; }
+          }
+        }
+        
+        Group #MaxBalanceRow {
+          LayoutMode: Left;
+          Anchor: (Height: 44, Bottom: 18);
+          
+          Label { Text: "Max Balance:"; Style: (FontSize: 14, TextColor: #8899aa); Anchor: (Width: 140, Vertical: 0); }
+          
+          Group #MaxBalanceBox {
+            Background: (Color: #0d1a2d);
+            Padding: (Left: 14, Right: 14, Top: 10, Bottom: 10);
+            Anchor: (Width: 160, Height: 40, Vertical: 0);
+            OutlineColor: #1e3a5f;
+            OutlineSize: 1;
+            TextField #MaxBalanceInput { Style: (FontSize: 15, TextColor: #ffffff); FlexWeight: 1; }
+          }
+        }
+        
+        Label #ConfigStatus { Text: ""; Style: (FontSize: 13, TextColor: #00FF88, HorizontalAlignment: Center); Anchor: (Top: 12); }
+      }
+    }
+    
+    Group #Footer {
+      LayoutMode: Left;
+      Background: (Color: #0d2040);
+      Padding: (Top: 14, Bottom: 14, Left: 24, Right: 24);
+      Anchor: (Height: 68);
+      
+      TextButton #ReloadButton {
+        Text: "RELOAD";
+        Style: $C.@CtButtonSecondaryStyle;
+        Anchor: (Width: 120, Height: 44, Right: 16);
+      }
+      
+      TextButton #ResetButton {
+        Text: "RESET DEFAULTS";
+        Style: $C.@CtButtonDangerStyle;
+        Anchor: (Width: 160, Height: 44, Right: 16);
+      }
+      
+      Label { FlexWeight: 1; }
+      
+      TextButton #SaveButton {
+        Text: "SAVE CONFIG";
+        Style: $C.@CtButtonSuccessStyle;
+        Anchor: (Width: 150, Height: 44);
+      }
+    }
+  }
+}

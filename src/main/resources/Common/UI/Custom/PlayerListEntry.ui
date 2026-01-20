@@ -1,0 +1,36 @@
+$C = "CapitalyTale_Common.ui";
+
+// Player entry for transfer list
+Group #PlayerEntry {
+  LayoutMode: Left;
+  Background: (Color: #00000000);
+  Padding: (Top: 6, Bottom: 6, Left: 8, Right: 8);
+  Anchor: (Height: 36);
+  
+  // Player avatar placeholder
+  Group #Avatar {
+    Background: (Color: #1e3a5f);
+    Anchor: (Width: 24, Height: 24, Vertical: 0, Right: 10);
+    
+    Label #AvatarLetter {
+      Text: "P";
+      Style: (FontSize: 12, TextColor: #8899aa, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center);
+    }
+  }
+  
+  // Player name
+  Label #PlayerName {
+    Text: "PlayerName";
+    Style: (FontSize: 13, TextColor: #ffffff);
+    FlexWeight: 1;
+    Anchor: (Vertical: 0);
+  }
+  
+  // Select indicator (hidden by default)
+  Label #SelectIcon {
+    Text: "→";
+    Style: (FontSize: 14, TextColor: #00D4FF);
+    Anchor: (Vertical: 0);
+    Visible: false;
+  }
+}
